@@ -7,6 +7,19 @@ def get_user_by_email(db: Session, email: str):
     return db.query(models.User).filter(models.User.email == email).first()
 
 
+def get_or_create_guest_user(db: Session):
+    guest_email = 'guest@parachute.local'
+    guest = get_user_by_email(db, guest_email)
+    if guest:
+        return guest
+    password_hash = auth.get_password_hash('guest-password')
+    guest = models.User(name='Guest User', email=guest_email, password_hash=password_hash)
+    db.add(guest)
+    db.commit()
+    db.refresh(guest)
+    return guest
+
+
 def create_user(db: Session, user_data: schemas.UserCreate):
     password_hash = auth.get_password_hash(user_data.password)
     user = models.User(name=user_data.name, email=user_data.email, password_hash=password_hash)

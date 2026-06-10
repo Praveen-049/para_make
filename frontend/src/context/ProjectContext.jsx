@@ -33,12 +33,10 @@ export function ProjectProvider({ children }) {
   };
 
   useEffect(() => {
-    if (token) {
-      fetchProjects();
-      fetchStats();
-    }
+    fetchProjects();
+    fetchStats();
     setLoading(false);
-  }, [token]);
+  }, []);
 
   const value = useMemo(
     () => ({ projects, stats, loading, fetchProjects, fetchStats, createProject, deleteProject }),
