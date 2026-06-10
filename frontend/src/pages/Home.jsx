@@ -14,8 +14,8 @@ export default function Home() {
               <p className='max-w-2xl text-lg text-slate-300'>Create projects, input mission requirements, and generate validated canopy geometry with advanced engineering formulas and visualization.</p>
             </div>
             <div className='flex flex-wrap gap-4'>
-              <Link to='/register' className='rounded-2xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400'>Get started</Link>
-              <Link to='/login' className='rounded-2xl border border-slate-700 px-6 py-3 text-sm text-slate-100 transition hover:border-cyan-400'>Login</Link>
+              <Link to='/create' className='rounded-2xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400'>Start designing</Link>
+              <Link to='/dashboard' className='rounded-2xl border border-slate-700 px-6 py-3 text-sm text-slate-100 transition hover:border-cyan-400'>View dashboard</Link>
             </div>
           </div>
           <div className='rounded-[2.5rem] border border-slate-800/80 bg-slate-900/70 p-10 shadow-2xl shadow-slate-950/30'>

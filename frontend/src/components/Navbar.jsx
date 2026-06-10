@@ -12,19 +12,14 @@ export default function Navbar() {
         </Link>
         <nav className='flex items-center gap-4'>
           <Link to='/' className='transition hover:text-white'>Home</Link>
+          <Link to='/dashboard' className='transition hover:text-white'>Dashboard</Link>
+          <Link to='/create' className='rounded-xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400'>Create</Link>
           {user ? (
             <>
-              <Link to='/dashboard' className='transition hover:text-white'>Dashboard</Link>
-              <Link to='/create' className='rounded-xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400'>Create</Link>
               <button onClick={logout} className='text-sm transition hover:text-white'>Logout</button>
               <span className='text-sm text-slate-400'>Hi, {user.name}</span>
             </>
-          ) : (
-            <>
-              <Link to='/login' className='transition hover:text-white'>Login</Link>
-              <Link to='/register' className='rounded-xl border border-slate-700 px-4 py-2 text-sm transition hover:border-cyan-400'>Register</Link>
-            </>
-          )}
+          ) : null}
         </nav>
       </div>
     </header>
