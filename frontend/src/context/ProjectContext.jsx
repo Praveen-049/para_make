@@ -36,8 +36,8 @@ export function ProjectProvider({ children }) {
     if (token) {
       fetchProjects();
       fetchStats();
-      setLoading(false);
     }
+    setLoading(false);
   }, [token]);
 
   const value = useMemo(

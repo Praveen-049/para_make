@@ -5,7 +5,6 @@ import CreateProject from './pages/CreateProject';
 import NotFound from './pages/NotFound';
 import { AuthProvider } from './context/AuthContext';
 import { ProjectProvider } from './context/ProjectContext';
-import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -14,14 +13,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route
-              path='/dashboard'
-              element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
-            />
-            <Route
-              path='/create'
-              element={<ProtectedRoute><CreateProject /></ProtectedRoute>}
-            />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/create' element={<CreateProject />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </BrowserRouter>
